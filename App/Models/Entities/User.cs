@@ -1,6 +1,8 @@
-﻿namespace Models
+﻿using Models.Entities.Interfaces;
+
+namespace Models
 {
-    public class User
+    public class User : IUser
     {
         #region Properties
         public int Id { get; set; }

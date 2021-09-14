@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Models.Entities.Interfaces;
+using System;
 
 namespace Models
 {
-    public class Survey
+    public class Survey : ISurvey
     {
         #region Properties
         public int Id { get; set; }

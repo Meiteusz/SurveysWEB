@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Models.Entities.Interfaces;
+using System;
 
 namespace Models
 {
-    public class Occurrence
+    public class Occurrence : IOccurrence
     {
         #region Properties
         public int Id { get; set; }

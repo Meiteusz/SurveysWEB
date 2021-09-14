@@ -57,16 +57,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Interfaces\IOccurrence.cs" />
+    <Compile Include="Entities\Interfaces\ISurvey.cs" />
+    <Compile Include="Entities\Interfaces\IUser.cs" />
     <Compile Include="Migrations\202109132347486_CreateSurveysWEB.cs" />
     <Compile Include="Migrations\202109132347486_CreateSurveysWEB.designer.cs">
       <DependentUpon>202109132347486_CreateSurveysWEB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Occurrence.cs" />
-    <Compile Include="Survey.cs" />
+    <Compile Include="Entities\Occurrence.cs" />
+    <Compile Include="Entities\Survey.cs" />
     <Compile Include="SurveysWebContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Entities\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
