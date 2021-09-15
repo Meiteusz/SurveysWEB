@@ -1,2 +1,2 @@
 # SurveysWEB
-Simple Survey System - Web
+Simple Survey System - Web with Entity Framework
