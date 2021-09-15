@@ -69,7 +69,15 @@
   <ItemGroup>
     <Content Include="Css\Login.css" />
     <Content Include="Css\MasterPage.css" />
+    <Content Include="Css\OccurrenceModule.css" />
+    <Content Include="Css\SurveysModule.css" />
+    <Content Include="Css\ViewOccurrence.css" />
+    <Content Include="Css\ViewSurvey.css" />
     <Content Include="Pages\Login.aspx" />
+    <Content Include="Pages\OccurrenceModule.aspx" />
+    <Content Include="Pages\SurveysModule.aspx" />
+    <Content Include="Pages\ViewOccurrence.aspx" />
+    <Content Include="Pages\ViewSurvey.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +94,34 @@
     </Compile>
     <Compile Include="Pages\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OccurrenceModule.aspx.cs">
+      <DependentUpon>OccurrenceModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OccurrenceModule.aspx.designer.cs">
+      <DependentUpon>OccurrenceModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SurveysModule.aspx.cs">
+      <DependentUpon>SurveysModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SurveysModule.aspx.designer.cs">
+      <DependentUpon>SurveysModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewOccurrence.aspx.cs">
+      <DependentUpon>ViewOccurrence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewOccurrence.aspx.designer.cs">
+      <DependentUpon>ViewOccurrence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewSurvey.aspx.cs">
+      <DependentUpon>ViewSurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewSurvey.aspx.designer.cs">
+      <DependentUpon>ViewSurvey.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

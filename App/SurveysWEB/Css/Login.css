@@ -17,5 +17,11 @@
 
 #txtPassword {
     height: 30px;
-    width: 800px;
+    width: 300px;
+}
+
+#btnLogin {
+    width: 150px;
+    height: 40px;
+    margin-left: 78%;
 }

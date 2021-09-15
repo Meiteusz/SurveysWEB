@@ -11,7 +11,7 @@
                 <input id="txtPassword" type="text" runat="server" placeholder="Enter Password" />
             </div>
             <div>
-                <asp:Button ID="Button1" runat="server" Text="Login" />
+                <asp:Button ID="btnLogin" runat="server" Text="Login" />
             </div>
         </div>
 </asp:Content>

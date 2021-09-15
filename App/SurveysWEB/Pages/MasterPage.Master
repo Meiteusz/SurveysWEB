@@ -5,21 +5,20 @@
 <html>
 <head runat="server">
     <title>Surveys Web</title>
-    <link href="/Css/MasterPage.css" rel="stylesheet"/>
+    <link href="/Css/MasterPage.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <header id="mainHeader">
-
         </header>
         <div>
             <asp:ContentPlaceHolder ID="Content" runat="server">
             </asp:ContentPlaceHolder>
         </div>
         <footer id="mainFooter">
-
+            <asp:Label ID="lblApresentacao" runat="server" Text="Desenvolvido por Matheus Teixeira"></asp:Label>
         </footer>
     </form>
 </body>
