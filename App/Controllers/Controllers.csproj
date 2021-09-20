@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Interfaces\IOccurrenceBLL.cs" />
+    <Compile Include="Interfaces\ISurveyBLL.cs" />
+    <Compile Include="Interfaces\IUserBLL.cs" />
+    <Compile Include="OccurrenceBLL.cs" />
+    <Compile Include="SurveyBLL.cs" />
+    <Compile Include="UserBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

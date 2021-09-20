@@ -1,0 +1,18 @@
+﻿body {
+}
+
+.modalBackround {
+    background-color: black;
+    opacity: 0.6 !important;
+    z-index: 20;
+}
+
+.modalPopup {
+    top: 10.7% !important;
+    padding: 20px 0px 24px 10px;
+    position: relative;
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    border: 1px solid black;
+}

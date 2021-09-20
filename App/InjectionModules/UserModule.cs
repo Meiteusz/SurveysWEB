@@ -1,5 +1,5 @@
-﻿using Models;
-using Models.Entities.Interfaces;
+﻿using Models.Daos;
+using Models.Daos.Interfaces;
 using Ninject;
 using Ninject.Modules;
 using System.Reflection;
@@ -10,13 +10,13 @@ namespace InjectionModules
     {
         public override void Load()
         {
-            Bind<IUser>().To<User>();
+            Bind<IUserDao>().To<UserDao>();
         }
-        public static IUser ConfiguratingModule()
+        public static IUserDao ConfiguratingModule()
         {
             StandardKernel kernel = new StandardKernel();
             kernel.Load(Assembly.GetExecutingAssembly());
-            return kernel.Get<IUser>();
+            return kernel.Get<IUserDao>();
         }
     }
 }

@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Daos\Interfaces\ISurveyDao.cs" />
+    <Compile Include="Daos\Interfaces\IUserDao.cs" />
+    <Compile Include="Daos\Interfaces\IOccurrenceDao.cs" />
+    <Compile Include="Daos\OccurrenceDao.cs" />
+    <Compile Include="Daos\SurveyDao.cs" />
+    <Compile Include="Daos\UserDao.cs" />
     <Compile Include="Entities\Interfaces\IOccurrence.cs" />
     <Compile Include="Entities\Interfaces\ISurvey.cs" />
     <Compile Include="Entities\Interfaces\IUser.cs" />
@@ -67,6 +73,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\Occurrence.cs" />
     <Compile Include="Entities\Survey.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="ResponseData.cs" />
+    <Compile Include="Settings\UserSettings.cs" />
     <Compile Include="SurveysWebContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\User.cs" />

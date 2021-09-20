@@ -18,7 +18,7 @@
             </asp:ContentPlaceHolder>
         </div>
         <footer id="mainFooter">
-            <asp:Label ID="lblApresentacao" runat="server" Text="Desenvolvido por Matheus Teixeira"></asp:Label>
+            <h3 ID="lblApresentacao">Desenvolvido por Matheus Teixeira</h3>
         </footer>
     </form>
 </body>
