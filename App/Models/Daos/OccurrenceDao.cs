@@ -102,7 +102,7 @@ namespace Models.Daos
             return response;
         }
 
-        public ResponseData<IEnumerable<dynamic>> GetAll(int p_Id)
+        public ResponseData<IEnumerable<dynamic>> GetAll()
         {
             ResponseData<IEnumerable<dynamic>> response = new ResponseData<IEnumerable<dynamic>>();
 

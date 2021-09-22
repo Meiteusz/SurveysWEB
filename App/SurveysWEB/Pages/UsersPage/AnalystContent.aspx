@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AnalystContent.aspx.cs" MasterPageFile="~/Pages/MasterPage.Master" Inherits="SurveysWEB.Pages.UsersPage.AnalystContent" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnalystContent.aspx.cs" MasterPageFile="~/Pages/MasterPage.Master" Inherits="SurveysWEB.Pages.UsersPage.AnalystContent" %>
 
 <asp:Content ContentPlaceHolderID="Content" runat="server">
     <link href="/Css/AnalystContent.css" rel="stylesheet" runat="server" />
@@ -13,39 +13,46 @@
             <asp:Button ID="btnViewSurveys" runat="server" Text="View Surveys" />
         </div>
 
-        <asp:ScriptManager runat="server"></asp:ScriptManager>
-
         <asp:Panel runat="server" ID="pnlRegisterSurvey" CssClass="modalPopup">
-
             <div class="container-registerSurvey">
-                <asp:Label ID="Label2" runat="server" Text="Data"></asp:Label>
-                <input id="dtpOpeningDate" type="datetime-local" />
-
-                <asp:Label ID="Label4" runat="server" Text="Responsible"></asp:Label>
-                <asp:TextBox ID="txtResponsible" runat="server"></asp:TextBox>
-
-                <asp:Label ID="Label5" runat="server" Text="Description"></asp:Label>
-                <textarea id="txtDescription" cols="20" rows="2"></textarea>
-
-                <asp:Label ID="Label6" runat="server" Text="Adress"></asp:Label>
-                <asp:TextBox ID="txtAdress" runat="server"></asp:TextBox>
-
-                <asp:Label ID="Label7" runat="server" Text="Local Image"></asp:Label>
-                <asp:FileUpload ID="FileLocalImage" runat="server" />
+                <div>
+                    <asp:Label ID="Label1" runat="server" Text="Data"></asp:Label>
+                    <asp:TextBox ID="dtpOpeningDate" runat="server" TextMode="Date"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Label ID="Label5" runat="server" Text="Description"></asp:Label>
+                    <textarea id="txtDescription" cols="20" rows="2" runat="server"></textarea>
+                </div>
+                <div>
+                    <asp:Label ID="Label6" runat="server" Text="Adress"></asp:Label>
+                    <asp:TextBox ID="txtAdress" runat="server"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Label ID="Label7" runat="server" Text="Local Image"></asp:Label>
+                    <asp:FileUpload ID="FileLocalImage" accept="" runat="server" />
+                </div>
 
                 <div>
-                    <asp:Button ID="btnRegister" runat="server" Text="Register"></asp:Button>
-                    <asp:Button ID="btnUpdate" runat="server" Text="Update"></asp:Button>
-                    <asp:Button ID="btnDelete" runat="server" Text="Delete"></asp:Button>
+                    <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click"></asp:Button>
                 </div>
-            </div>
-
-            <div>
-                <asp:Button ID="btnClose" runat="server" Text="Close" />
+                <div>
+                    <asp:Button ID="btnCloseRegisterSurvey" runat="server" Text="Close" />
+                </div>
             </div>
         </asp:Panel>
 
-        <ajaxToolkit:ModalPopupExtender runat="server" CancelControlID="btnClose" BackgroundCssClass="modalBackround" PopupControlID="pnlRegisterSurvey" TargetControlID="btnRegisterSurvey">
+        <asp:Panel runat="server" ID="pnlViewSurveys" CssClass="modalPopup">
+            <div class="container-viewSurvey">
+                <asp:GridView ID="dgvSurveys" runat="server" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" RowStyle-Height="35px" Width="890px"></asp:GridView>
+            </div>
+            <div>
+                <asp:Button ID="btnCloseViewSurveys" runat="server" Text="Close" />
+            </div>
+        </asp:Panel>
+
+        <ajaxToolkit:ModalPopupExtender runat="server" CancelControlID="btnCloseRegisterSurvey" BackgroundCssClass="modalBackround" PopupControlID="pnlRegisterSurvey" TargetControlID="btnRegisterSurvey">
+        </ajaxToolkit:ModalPopupExtender>
+        <ajaxToolkit:ModalPopupExtender runat="server" CancelControlID="btnCloseViewSurveys" BackgroundCssClass="modalBackround" PopupControlID="pnlViewSurveys" TargetControlID="btnViewSurveys">
         </ajaxToolkit:ModalPopupExtender>
     </div>
 </asp:Content>

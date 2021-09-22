@@ -89,8 +89,8 @@
     <Content Include="Css\ViewSurvey.css" />
     <Content Include="Pages\UsersPage\AdminContent.aspx" />
     <Content Include="Pages\Login.aspx" />
-    <Content Include="Pages\UsersPage\OperatorContent.aspx" />
     <Content Include="Pages\UsersPage\AnalystContent.aspx" />
+    <Content Include="Pages\UsersPage\OperatorContent.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -116,19 +116,19 @@
     <Compile Include="Pages\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\UsersPage\OperatorContent.aspx.cs">
-      <DependentUpon>OperatorContent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\UsersPage\OperatorContent.aspx.designer.cs">
-      <DependentUpon>OperatorContent.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\UsersPage\AnalystContent.aspx.cs">
       <DependentUpon>AnalystContent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\UsersPage\AnalystContent.aspx.designer.cs">
       <DependentUpon>AnalystContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UsersPage\OperatorContent.aspx.cs">
+      <DependentUpon>OperatorContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UsersPage\OperatorContent.aspx.designer.cs">
+      <DependentUpon>OperatorContent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

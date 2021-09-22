@@ -16,3 +16,7 @@
     background-color: white;
     border: 1px solid black;
 }
+
+.dgvSurveys :hover {
+    cursor: pointer;
+}

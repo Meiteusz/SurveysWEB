@@ -1,4 +1,5 @@
 ﻿using Controllers.Interfaces;
+using Controllers.Settings;
 using Models;
 using Models.Daos.Interfaces;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace Controllers
 
         public Response Insert(Survey p_survey)
         {
+            p_survey.AnalistId = UserSettings.UserLogged.Id;
+            p_survey.Status = 0; //change
             return _surveyDao.Insert(p_survey);
         }
 
@@ -31,14 +34,14 @@ namespace Controllers
             return _surveyDao.Delete(p_survey);
         }
 
-        public ResponseData<IEnumerable<dynamic>> GetAll(int p_Id)
-        {
-            return _surveyDao.GetAll(p_Id);
-        }
-
         public ResponseData<Survey> GetById(int p_Id)
         {
             return _surveyDao.GetById(p_Id);
+        }
+
+        public ResponseData<IEnumerable<dynamic>> GetAll()
+        {
+            return _surveyDao.GetAll();
         }
     }
 }

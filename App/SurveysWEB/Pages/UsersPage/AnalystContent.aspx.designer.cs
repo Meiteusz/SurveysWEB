@@ -11,7 +11,7 @@ namespace SurveysWEB.Pages.UsersPage
 {
 
 
-    public partial class teste
+    public partial class AnalystContent
     {
 
         /// <summary>
@@ -42,31 +42,22 @@ namespace SurveysWEB.Pages.UsersPage
         protected global::System.Web.UI.WebControls.Panel pnlRegisterSurvey;
 
         /// <summary>
-        /// Label2 control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Label4 control.
+        /// dtpOpeningDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
-        /// <summary>
-        /// txtResponsible control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtResponsible;
+        protected global::System.Web.UI.WebControls.TextBox dtpOpeningDate;
 
         /// <summary>
         /// Label5 control.
@@ -76,6 +67,15 @@ namespace SurveysWEB.Pages.UsersPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
+
+        /// <summary>
+        /// txtDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescription;
 
         /// <summary>
         /// Label6 control.
@@ -123,30 +123,39 @@ namespace SurveysWEB.Pages.UsersPage
         protected global::System.Web.UI.WebControls.Button btnRegister;
 
         /// <summary>
-        /// btnUpdate control.
+        /// btnCloseRegisterSurvey control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.Button btnCloseRegisterSurvey;
 
         /// <summary>
-        /// btnDelete control.
+        /// pnlViewSurveys control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.Panel pnlViewSurveys;
 
         /// <summary>
-        /// btnClose control.
+        /// dgvSurveys control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.GridView dgvSurveys;
+
+        /// <summary>
+        /// btnCloseViewSurveys control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCloseViewSurveys;
     }
 }

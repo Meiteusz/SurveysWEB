@@ -1,7 +1,7 @@
 ﻿using Controllers;
 using Controllers.Interfaces;
+using Controllers.Settings;
 using InjectionModules;
-using Models.Settings;
 using System;
 
 namespace SurveysWEB.Pages

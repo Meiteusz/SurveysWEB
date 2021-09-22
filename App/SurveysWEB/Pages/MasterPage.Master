@@ -13,12 +13,17 @@
     <form id="form1" runat="server">
         <header id="mainHeader">
         </header>
-        <div>
-            <asp:ContentPlaceHolder ID="Content" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+        <!--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>-->
+                <div>
+                    <asp:ContentPlaceHolder ID="Content" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            <!--</ContentTemplate>
+        </asp:UpdatePanel>-->
         <footer id="mainFooter">
-            <h3 ID="lblApresentacao">Desenvolvido por Matheus Teixeira</h3>
+            <h3 id="lblApresentacao">Desenvolvido por Matheus Teixeira</h3>
         </footer>
     </form>
 </body>

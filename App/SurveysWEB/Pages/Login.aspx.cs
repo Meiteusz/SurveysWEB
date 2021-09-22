@@ -16,7 +16,8 @@ namespace SurveysWEB.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtLogin.Value = "Analyst";
+            txtPassword.Value = "123";
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

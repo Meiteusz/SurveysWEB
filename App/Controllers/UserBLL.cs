@@ -1,7 +1,7 @@
 ﻿using Controllers.Interfaces;
+using Controllers.Settings;
 using Models;
 using Models.Daos.Interfaces;
-using Models.Settings;
 using System;
 
 namespace Controllers

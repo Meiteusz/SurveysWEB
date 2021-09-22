@@ -45,6 +45,9 @@
     <Compile Include="Interfaces\ISurveyBLL.cs" />
     <Compile Include="Interfaces\IUserBLL.cs" />
     <Compile Include="OccurrenceBLL.cs" />
+    <Compile Include="Settings\OccurreceSettings.cs" />
+    <Compile Include="Settings\SurveySettings.cs" />
+    <Compile Include="Settings\UserSettings.cs" />
     <Compile Include="SurveyBLL.cs" />
     <Compile Include="UserBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

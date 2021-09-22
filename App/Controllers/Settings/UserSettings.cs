@@ -1,4 +1,6 @@
-﻿namespace Models.Settings
+﻿using Models;
+
+namespace Controllers.Settings
 {
     public static class UserSettings
     {
