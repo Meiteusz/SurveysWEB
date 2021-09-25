@@ -1,4 +1,5 @@
-﻿using Controllers;
+﻿using AjaxControlToolkit;
+using Controllers;
 using Controllers.Interfaces;
 using Controllers.Settings;
 using InjectionModules;
@@ -6,15 +7,14 @@ using System;
 using System.Drawing;
 using System.Web.UI.WebControls;
 
-namespace SurveysWEB.Pages
+namespace SurveysWEB.Pages.UsersPage
 {
-    public partial class OccurrenceContent : System.Web.UI.Page
+    public partial class OperatorContent : System.Web.UI.Page
     {
         private readonly IOccurrenceBLL _occurrenceBLL;
         private readonly ISurveyBLL _surveyBLL;
 
-
-        public OccurrenceContent()
+        public OperatorContent()
         {
             _occurrenceBLL = new OccurrenceBLL(OccurrenceModule.ConfiguratingModule());
             _surveyBLL = new SurveyBLL(SurveyModule.ConfiguratingModule());
@@ -25,19 +25,36 @@ namespace SurveysWEB.Pages
             if (!Page.IsPostBack)
             {
                 Helper.ShowData(dgvSurvey, _surveyBLL.GetAll().Data);
+                Helper.ShowData(dgvOccurrences, _occurrenceBLL.GetAll().Data);
             }
         }
 
-        protected void btnRegister_Click(object sender, EventArgs e)
+        protected void btnOccurrenceRegister_Click(object sender, EventArgs e)
         {
-            txtDescription.Value = SurveySettings.ActualSurvey.Id.ToString();
+            mpeRegisterOccurence.Show();
+            mpeViewSurveys.Hide();
+
+            txtSurveyAdress.Text = SurveySettings.ActualSurvey.Adress;
+            txtSurveyResponsible.Text = SurveySettings.ActualSurvey.AnalistId.ToString(); //Change
+            dtpSurveyOpeningDate.Text = SurveySettings.ActualSurvey.OpeningDate.ToString("yyyy-MM-dd");
         }
 
-        protected void dgvSurvey_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnRegisterOcc_Click(object sender, EventArgs e)
         {
-            var Survey = _surveyBLL.GetById(Int32.Parse(dgvSurvey.SelectedRow.Cells[0].Text));
-            Survey.Data.SetActualSurvey(); //improving if Data == null...
-            PaintCurrentGridRow();
+            var occurrence = _occurrenceBLL.Create(); //improving
+            occurrence.Type = (byte)cmbType.SelectedIndex;
+            occurrence.Date = DateTime.Parse(dtpDate.Text);
+            occurrence.Description = txtDescription.Value;
+
+            var response = _occurrenceBLL.Insert(occurrence);
+
+            Response.Write(Helper.DisplayAlert(response.Message));
+        }
+
+        protected void btnCloseRegisterOccurrence_Click(object sender, EventArgs e)
+        {
+            mpeViewSurveys.Show();
+            mpeRegisterOccurence.Hide();
         }
 
         protected void dgvSurvey_RowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
@@ -49,20 +66,44 @@ namespace SurveysWEB.Pages
             }
         }
 
-        private void PaintCurrentGridRow() // Improving
+        protected void dgvSurvey_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var Survey = _surveyBLL.GetById(Int32.Parse(dgvSurvey.SelectedRow.Cells[0].Text));
+            Survey.Data.SetActualSurvey(); //improving if Data == null...
+            PaintCurrentGridRow(dgvSurvey, mpeViewSurveys);
+        }
+
+
+        protected void dgvOccurrences_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType.Equals(DataControlRowType.DataRow))
+            {
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(dgvOccurrences, "Select$" + e.Row.RowIndex);
+                e.Row.ToolTip = "Click on this Occurrence to view details";
+            }
+        }
+
+        protected void dgvOccurrences_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //var Survey = _surveyBLL.GetById(Int32.Parse(dgvSurvey.SelectedRow.Cells[0].Text));
+            //Survey.Data.SetActualSurvey(); //improving if Data == null...
+            PaintCurrentGridRow(dgvOccurrences, mpeViewOccurrences);
+        }
+
+        private void PaintCurrentGridRow(GridView dgv, ModalPopupExtender mpe) // Improving
         {
             if (this.Session["PreviousRow"] != null)
             {
                 var PreviousRow = (int)Session["PreviousRow"];
-                GridViewRow Row = dgvSurvey.Rows[PreviousRow];
+                GridViewRow Row = dgv.Rows[PreviousRow];
                 Row.BackColor = Color.White;
             }
-            GridViewRow CurrentRow = dgvSurvey.SelectedRow;
+            GridViewRow CurrentRow = dgv.SelectedRow;
             CurrentRow.BackColor = Helper.SelectedRowColor;
             this.Session["PreviousRow"] = CurrentRow.RowIndex;
 
-            mpeViewSurveys.Hide();
-            mpeViewSurveys.Show();
+            mpe.Hide();
+            mpe.Show();
         }
     }
 }

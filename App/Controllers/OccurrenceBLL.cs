@@ -1,4 +1,5 @@
 ﻿using Controllers.Interfaces;
+using Controllers.Settings;
 using Models;
 using Models.Daos;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace Controllers
 
         public Response Insert(Occurrence p_occurrence)
         {
+            p_occurrence.SurveyId = SurveySettings.ActualSurvey.Id;
+
             return _occurrenceDao.Insert(p_occurrence);
         }
 

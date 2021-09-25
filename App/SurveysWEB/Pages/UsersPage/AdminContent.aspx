@@ -2,7 +2,6 @@
 
 <asp:Content ContentPlaceHolderID="Content" runat="server">
     <link href="/Css/AdminContent.css" rel="stylesheet" runat="server" />
-    <asp:ScriptManager runat="server"></asp:ScriptManager>
 
     <div class="container">
         <asp:Label ID="lblAdminLogged" runat="server" Text="Admin Logged: "></asp:Label>
