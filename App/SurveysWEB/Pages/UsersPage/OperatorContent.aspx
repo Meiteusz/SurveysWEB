@@ -29,7 +29,7 @@
         <asp:Panel ID="pnlRegisterOccurrence" runat="server" CssClass="modalPopup">
             <div class="container-registerOccurrence">
 
-                <asp:Panel ID="pnlSurveysDetails" runat="server">
+                <asp:Panel ID="pnlSurveysDetails" runat="server" GroupingText="Survey" >
                     <div>
                         <asp:Label ID="Label1" runat="server" Text="Survey Adress"></asp:Label>
                         <asp:TextBox ID="txtSurveyAdress" runat="server"></asp:TextBox>
@@ -105,11 +105,54 @@
             </div>
         </asp:Panel>
 
+        <asp:Panel runat="server" ID="pnlDetailsOccurrence" CssClass="modalPopupDetail">
+            <asp:Button ID="btnTeste" runat="server" Text="Button" /><!-- Clear -->
+            <asp:Panel ID="Panel1" runat="server" GroupingText="Survey">
+                <div>
+                    <asp:Label ID="Label15" runat="server" Text="Survey Adress"></asp:Label>
+                    <asp:TextBox ID="txtSurveyAdressDetail" runat="server"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Label ID="Label16" runat="server" Text="Survey Responsible"></asp:Label>
+                    <asp:TextBox ID="txtSurveyResponsibleDetail" runat="server"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Label ID="Label17" runat="server" Text="Survey Opening Date"></asp:Label>
+                    <asp:TextBox ID="txtSurveyOpeningDateDetail" runat="server" TextMode="Date"></asp:TextBox>
+                </div>
+            </asp:Panel>
+            <div>
+                <div>
+                    <asp:Label ID="Label12" runat="server" Text="Type"></asp:Label>
+                    <select id="cmbTybeDetail" runat="server">
+                        <option>Environmental</option>
+                        <option>Patrimonial</option>
+                    </select>
+                </div>
+                <div>
+                    <asp:Label ID="Label13" runat="server" Text="Date"></asp:Label>
+                    <asp:TextBox ID="txtDateDetail" runat="server" TextMode="Date"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Label ID="Label14" runat="server" Text="Description"></asp:Label>
+                    <textarea id="txtDescriptionDetail" cols="20" rows="2" runat="server"></textarea>
+                </div>
+            </div>
+            <div>
+                <asp:Button ID="btnCloseDetailsOccurrences" runat="server" Text="Close" />
+            </div>
+            <div>
+                <asp:Button ID="btnDetailBack" runat="server" Text="Back" OnClick="btnDetailBack_Click" />
+            </div>
+        </asp:Panel>
+
         <ajaxToolkit:ModalPopupExtender ID="mpeViewSurveys" runat="server" CancelControlID="btnOccurrenceRegister" BackgroundCssClass="modalBackround" PopupControlID="pnlSurveys" TargetControlID="btnRegisterOccurrence" BehaviorID="mpeViewSurveys">
         </ajaxToolkit:ModalPopupExtender>
         <ajaxToolkit:ModalPopupExtender ID="mpeRegisterOccurence" runat="server" CancelControlID="btnCloseRegisterOccurrence" BackgroundCssClass="modalBackround" PopupControlID="pnlRegisterOccurrence" TargetControlID="btnOccurrenceRegister" BehaviorID="mpeRegisterOccurence">
         </ajaxToolkit:ModalPopupExtender>
         <ajaxToolkit:ModalPopupExtender ID="mpeViewOccurrences" runat="server" CancelControlID="btnCloseViewOccurrences" BackgroundCssClass="modalBackround" PopupControlID="pnlViewOccurrences" TargetControlID="btnViewOccurences">
+        </ajaxToolkit:ModalPopupExtender>
+        <ajaxToolkit:ModalPopupExtender ID="mpeDetailOccurrence" runat="server" CancelControlID="btnCloseDetailsOccurrences" BackgroundCssClass="modalBackround" PopupControlID="pnlDetailsOccurrence" TargetControlID="btnTeste">
         </ajaxToolkit:ModalPopupExtender>
     </div>
 </asp:Content>

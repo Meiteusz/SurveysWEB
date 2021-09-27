@@ -11,8 +11,17 @@
     top: 10.7% !important;
     padding: 20px 0px 24px 10px;
     position: relative;
-    width: 900px;
-    height: 500px;
+    width: 1200px;
+    height: 650px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.modalPopupDetail {
+    top: 10.7% !important;
+    padding: 20px 0px 24px 10px;
+    width: 820px;
+    height: 650px;
     background-color: white;
     border: 1px solid black;
 }

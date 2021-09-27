@@ -1,7 +1,10 @@
 ﻿using Controllers;
 using Controllers.Interfaces;
+using Controllers.Settings;
 using InjectionModules;
 using System;
+using System.Web;
+using System.Web.UI.WebControls;
 
 namespace SurveysWEB.Pages.UsersPage
 {
@@ -35,5 +38,41 @@ namespace SurveysWEB.Pages.UsersPage
         }
 
         private byte[] SaveLocaImage() => FileLocalImage.FileBytes; // --> Working on validations...
+
+        protected void dgvSurveys_RowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType.Equals(DataControlRowType.DataRow))
+            {
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(dgvSurveys, "Select$" + e.Row.RowIndex);
+                e.Row.ToolTip = "Click on this Survey to view details";
+            }
+        }
+
+        protected void dgvSurveys_SelectedIndexChanged(object sender, EventArgs e) // Improving...
+        {
+            var survey = _surveyBLL.GetById(Int32.Parse(dgvSurveys.SelectedRow.Cells[0].Text));
+
+            if (survey.Data.Equals(null))
+                Response.Write(Helper.DisplayAlert("Error with this Survey"));
+            else
+            {
+                SurveySettings.SetActualSurvey(survey.Data);  //improving if Data == null...
+
+                cmbStatus.SelectedIndex = SurveySettings.ActualSurvey.Status;
+                txtOpeningDateDetail.Text = SurveySettings.ActualSurvey.OpeningDate.ToString("yyyy-MM-dd");
+                LocalImage.ImageUrl = "data:image/png;base64," + Convert.ToBase64String(SurveySettings.ActualSurvey.Local); // Improving...to
+                txtDescriptionDetail.Value = SurveySettings.ActualSurvey.Description;
+                txtAdressDetail.Text = SurveySettings.ActualSurvey.Adress;
+                txtResponsibleDetail.Text = SurveySettings.ActualSurvey.AnalistId.ToString(); //change
+                
+                mpeDetailsSurveys.Show();
+            }
+        }
+
+        protected void btnBackDetailsSurvey_Click(object sender, EventArgs e)
+        {
+            mpeViewSurveys.Show();
+            mpeDetailsSurveys.Hide();
+        }
     }
 }

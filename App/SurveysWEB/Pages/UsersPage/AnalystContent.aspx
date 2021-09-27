@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnalystContent.aspx.cs" MasterPageFile="~/Pages/MasterPage.Master" Inherits="SurveysWEB.Pages.UsersPage.AnalystContent" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnalystContent.aspx.cs" MasterPageFile="~/Pages/MasterPage.Master" EnableEventValidation="false" Inherits="SurveysWEB.Pages.UsersPage.AnalystContent" %>
 
 <asp:Content ContentPlaceHolderID="Content" runat="server">
     <link href="/Css/AnalystContent.css" rel="stylesheet" runat="server" />
@@ -62,24 +62,72 @@
                 </div>
             </asp:Panel>
             <div class="container-viewSurvey">
-                <asp:GridView ID="dgvSurveys" runat="server" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" RowStyle-Height="35px" Width="890px"></asp:GridView>
+                <asp:GridView ID="dgvSurveys" runat="server" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" RowStyle-Height="35px" Width="890px" OnRowDataBound="dgvSurveys_RowDataBound" OnSelectedIndexChanged="dgvSurveys_SelectedIndexChanged"></asp:GridView>
             </div>
             <div>
                 <asp:Button ID="btnCloseViewSurveys" runat="server" Text="Close" />
             </div>
         </asp:Panel>
 
-        <asp:Panel runat="server" ID="pnlDetailsSurvey" CssClass="modalPopup">
+        <asp:Panel runat="server" ID="pnlDetailsSurvey" CssClass="modalPopupDetail">
+            <asp:Button ID="btnTeste" runat="server" Text="Button" />
+            <!-- Clear -->
+            <div>
+                <div>
+                    <asp:Label ID="Label2" runat="server" Text="Status"></asp:Label>
+                    <select id="cmbStatus" runat="server">
+                        <option>Environmental</option>
+                        <option>Patrimonial</option>
+                    </select>
+                </div>
+                <div>
+                    <asp:Label ID="Label3" runat="server" Text="Data"></asp:Label>
+                    <asp:TextBox ID="txtOpeningDateDetail" runat="server" TextMode="Date"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Image ID="LocalImage" runat="server" Width="200px" Height="200px" />
+                </div>
+                <div>
+                    <asp:Label ID="Label4" runat="server" Text="Description"></asp:Label>
+                    <textarea id="txtDescriptionDetail" cols="20" rows="2" runat="server"></textarea>
+                </div>
+                <div>
+                    <asp:Label ID="Label12" runat="server" Text="Adress"></asp:Label>
+                    <asp:TextBox ID="txtAdressDetail" runat="server"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Label ID="Label13" runat="server" Text="Responsible"></asp:Label>
+                    <asp:TextBox ID="txtResponsibleDetail" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div>
+            </div>
+            <div>
+                <div>
+                    <asp:Button ID="btnUpdate" runat="server" Text="Update" />
+                </div>
+                <div>
+                    <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Button ID="btnBackDetailsSurvey" runat="server" Text="Back" OnClick="btnBackDetailsSurvey_Click" />
+                </div>
+                <div>
+                    <asp:Button ID="btnConfirm" runat="server" Text="Confirm" />
+                </div>
+            </div>
             <div>
                 <asp:Button ID="btnCloseDetailsSurvey" runat="server" Text="Close" />
             </div>
         </asp:Panel>
 
-        <ajaxToolkit:ModalPopupExtender runat="server" CancelControlID="btnCloseRegisterSurvey" BackgroundCssClass="modalBackround" PopupControlID="pnlRegisterSurvey" TargetControlID="btnRegisterSurvey">
+        <ajaxToolkit:ModalPopupExtender ID="mpeRegisterSurvey" runat="server" CancelControlID="btnCloseRegisterSurvey" BackgroundCssClass="modalBackround" PopupControlID="pnlRegisterSurvey" TargetControlID="btnRegisterSurvey">
         </ajaxToolkit:ModalPopupExtender>
-        <ajaxToolkit:ModalPopupExtender runat="server" CancelControlID="btnCloseViewSurveys" BackgroundCssClass="modalBackround" PopupControlID="pnlViewSurveys" TargetControlID="btnViewSurveys">
+        <ajaxToolkit:ModalPopupExtender ID="mpeViewSurveys" runat="server" CancelControlID="btnCloseViewSurveys" BackgroundCssClass="modalBackround" PopupControlID="pnlViewSurveys" TargetControlID="btnViewSurveys">
         </ajaxToolkit:ModalPopupExtender>
-        <ajaxToolkit:ModalPopupExtender runat="server" CancelControlID="btnCloseDetailsSurvey" BackgroundCssClass="modalBackround" PopupControlID="pnlDetailsSurvey" TargetControlID="">
+        <ajaxToolkit:ModalPopupExtender ID="mpeDetailsSurveys" runat="server" CancelControlID="btnCloseDetailsSurvey" BackgroundCssClass="modalBackround" PopupControlID="pnlDetailsSurvey" TargetControlID="btnTeste">
         </ajaxToolkit:ModalPopupExtender>
     </div>
 </asp:Content>
