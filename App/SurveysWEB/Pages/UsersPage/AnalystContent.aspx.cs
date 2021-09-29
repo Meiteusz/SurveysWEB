@@ -3,7 +3,6 @@ using Controllers.Interfaces;
 using Controllers.Settings;
 using InjectionModules;
 using System;
-using System.Web;
 using System.Web.UI.WebControls;
 
 namespace SurveysWEB.Pages.UsersPage
@@ -37,8 +36,6 @@ namespace SurveysWEB.Pages.UsersPage
             Response.Write(Helper.DisplayAlert(response.Message));
         }
 
-        private byte[] SaveLocaImage() => FileLocalImage.FileBytes; // --> Working on validations...
-
         protected void dgvSurveys_RowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
         {
             if (e.Row.RowType.Equals(DataControlRowType.DataRow))
@@ -64,7 +61,7 @@ namespace SurveysWEB.Pages.UsersPage
                 txtDescriptionDetail.Value = SurveySettings.ActualSurvey.Description;
                 txtAdressDetail.Text = SurveySettings.ActualSurvey.Adress;
                 txtResponsibleDetail.Text = SurveySettings.ActualSurvey.AnalistId.ToString(); //change
-                
+
                 mpeDetailsSurveys.Show();
             }
         }
@@ -74,5 +71,7 @@ namespace SurveysWEB.Pages.UsersPage
             mpeViewSurveys.Show();
             mpeDetailsSurveys.Hide();
         }
+
+        private byte[] SaveLocaImage() => FileLocalImage.FileBytes; // --> Working on validations...
     }
 }

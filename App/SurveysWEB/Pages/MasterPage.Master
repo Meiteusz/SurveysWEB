@@ -12,18 +12,22 @@
 <body>
     <form id="form1" runat="server">
         <header id="mainHeader">
+            <div>
+                <asp:ImageButton ID="btnLogoutt" runat="server" ImageUrl="~/Images/logout (2).png" Style="cursor: pointer; 
+                    background-color: transparent; border-style: hidden; width: 50px; height: 50px; margin-top: 23px; margin-left: 95%;" OnClick="btnLogoutt_Click" />
+            </div>
         </header>
         <!--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>-->
-                <div>
-                    <asp:ContentPlaceHolder ID="Content" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
-            <!--</ContentTemplate>
+        <div>
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--</ContentTemplate>
         </asp:UpdatePanel>-->
         <footer id="mainFooter">
-            <h3 id="lblApresentacao">Desenvolvido por Matheus Teixeira</h3>
+            <h3 id="lblApresentacao" style="margin-left: 85%; margin-block: 7%";>Desenvolvido por Matheus Teixeira</h3>
         </footer>
     </form>
 </body>

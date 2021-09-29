@@ -51,15 +51,6 @@ namespace SurveysWEB.Pages.UsersPage
         protected global::System.Web.UI.WebControls.GridView dgvSurvey;
 
         /// <summary>
-        /// btnCloseSurveys control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCloseSurveys;
-
-        /// <summary>
         /// btnOccurrenceRegister control.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace SurveysWEB.Pages.UsersPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOccurrenceRegister;
+
+        /// <summary>
+        /// btnCloseSurveys control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCloseSurveys;
 
         /// <summary>
         /// pnlRegisterOccurrence control.
@@ -366,6 +366,24 @@ namespace SurveysWEB.Pages.UsersPage
         protected global::System.Web.UI.WebControls.Button btnTeste;
 
         /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
+
+        /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
+
+        /// <summary>
         /// Panel1 control.
         /// </summary>
         /// <remarks>
@@ -483,15 +501,6 @@ namespace SurveysWEB.Pages.UsersPage
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescriptionDetail;
 
         /// <summary>
-        /// btnCloseDetailsOccurrences control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCloseDetailsOccurrences;
-
-        /// <summary>
         /// btnDetailBack control.
         /// </summary>
         /// <remarks>
@@ -499,6 +508,15 @@ namespace SurveysWEB.Pages.UsersPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDetailBack;
+
+        /// <summary>
+        /// btnCloseDetailsOccurrences control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCloseDetailsOccurrences;
 
         /// <summary>
         /// mpeViewSurveys control.

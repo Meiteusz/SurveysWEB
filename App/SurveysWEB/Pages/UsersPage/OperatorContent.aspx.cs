@@ -13,11 +13,13 @@ namespace SurveysWEB.Pages.UsersPage
     {
         private readonly IOccurrenceBLL _occurrenceBLL;
         private readonly ISurveyBLL _surveyBLL;
+        private readonly IUserBLL _userBLL;
 
         public OperatorContent()
         {
             _occurrenceBLL = new OccurrenceBLL(OccurrenceModule.ConfiguratingModule());
             _surveyBLL = new SurveyBLL(SurveyModule.ConfiguratingModule());
+            _userBLL = new UserBLL(UserModule.ConfiguratingModule());
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,6 +28,9 @@ namespace SurveysWEB.Pages.UsersPage
             {
                 Helper.ShowData(dgvSurvey, _surveyBLL.GetAll().Data);
                 Helper.ShowData(dgvOccurrences, _occurrenceBLL.GetAll().Data);
+                cmbTybeDetail.Disabled = true;
+                txtDateDetail.Enabled = false;
+                txtDescriptionDetail.Disabled = true;
             }
         }
 
@@ -35,7 +40,7 @@ namespace SurveysWEB.Pages.UsersPage
             mpeViewSurveys.Hide();
 
             txtSurveyAdress.Text = SurveySettings.ActualSurvey.Adress;
-            txtSurveyResponsible.Text = SurveySettings.ActualSurvey.AnalistId.ToString(); //Change
+            txtSurveyResponsible.Text = _userBLL.GetById(OccurrenceSettings.ActualOccurrece.SurveyId).Data.Name; //Change
             dtpSurveyOpeningDate.Text = SurveySettings.ActualSurvey.OpeningDate.ToString("yyyy-MM-dd");
         }
 
@@ -76,15 +81,15 @@ namespace SurveysWEB.Pages.UsersPage
             }
             else
             {
-                OccurreceSettings.SetActualOccurrece(occurrence.Data); //improving if Data == null...
+                OccurrenceSettings.SetActualOccurrece(occurrence.Data); //improving if Data == null...
 
-                var survey = _surveyBLL.GetById(OccurreceSettings.ActualOccurrece.SurveyId); // Improving
+                var survey = _surveyBLL.GetById(OccurrenceSettings.ActualOccurrece.SurveyId); // Improving
 
-                cmbTybeDetail.SelectedIndex = OccurreceSettings.ActualOccurrece.Type;
-                txtDateDetail.Text = OccurreceSettings.ActualOccurrece.Date.ToString("yyyy-MM-dd");
-                txtDescriptionDetail.Value = OccurreceSettings.ActualOccurrece.Description;
+                cmbTybeDetail.SelectedIndex = OccurrenceSettings.ActualOccurrece.Type;
+                txtDateDetail.Text = OccurrenceSettings.ActualOccurrece.Date.ToString("yyyy-MM-dd");
+                txtDescriptionDetail.Value = OccurrenceSettings.ActualOccurrece.Description;
                 txtSurveyAdressDetail.Text = survey.Data.Adress;
-                txtResponsibleFilter.Text = survey.Data.AnalistId.ToString(); // change
+                txtSurveyResponsibleDetail.Text = _userBLL.GetById(survey.Data.AnalistId).Data.Name; // change
                 txtSurveyOpeningDateDetail.Text = survey.Data.OpeningDate.ToString("yyyy-MM-dd");
 
                 mpeDetailOccurrence.Show();
@@ -128,6 +133,20 @@ namespace SurveysWEB.Pages.UsersPage
 
             mpe.Hide();
             mpe.Show();
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            cmbTybeDetail.Disabled = false;
+            txtDateDetail.Enabled = true;
+            txtDescriptionDetail.Disabled = false;
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            var response = _occurrenceBLL.Delete(OccurrenceSettings.ActualOccurrece);
+            Response.Write(Helper.DisplayAlert(response.Message));
+            mpeDetailOccurrence.Hide();
         }
     }
 }

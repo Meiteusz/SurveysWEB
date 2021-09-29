@@ -53,6 +53,9 @@
     <asp:Panel runat="server" ID="pnlViewUsers" CssClass="modalPopup">
         <div>
             <div>
+                <asp:GridView ID="dgvUsers" runat="server"></asp:GridView>
+            </div>
+            <div>
                 <asp:Button ID="btnCloseViewUsersModal" runat="server" Text="Close" />
             </div>
         </div>

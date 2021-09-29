@@ -87,21 +87,15 @@
     <Content Include="Css\OperatorContent.css" />
     <Content Include="Css\ViewOccurrence.css" />
     <Content Include="Css\ViewSurvey.css" />
-    <Content Include="Pages\UsersPage\AdminContent.aspx" />
+    <Content Include="Images\logout %282%29.png" />
     <Content Include="Pages\Login.aspx" />
+    <Content Include="Pages\UsersPage\AdminContent.aspx" />
     <Content Include="Pages\UsersPage\AnalystContent.aspx" />
     <Content Include="Pages\UsersPage\OperatorContent.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
-    <Compile Include="Pages\UsersPage\AdminContent.aspx.cs">
-      <DependentUpon>AdminContent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\UsersPage\AdminContent.aspx.designer.cs">
-      <DependentUpon>AdminContent.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,6 +109,13 @@
     </Compile>
     <Compile Include="Pages\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UsersPage\AdminContent.aspx.cs">
+      <DependentUpon>AdminContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UsersPage\AdminContent.aspx.designer.cs">
+      <DependentUpon>AdminContent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\UsersPage\AnalystContent.aspx.cs">
       <DependentUpon>AnalystContent.aspx</DependentUpon>
@@ -154,6 +155,10 @@
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{D598C4E3-FEDF-4DB4-9FA7-1A75F1382353}</Project>
       <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Validations\Validations.csproj">
+      <Project>{DBF24019-AA01-4991-AC8B-D0A394CD5C5E}</Project>
+      <Name>Validations</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

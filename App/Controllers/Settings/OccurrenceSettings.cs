@@ -2,7 +2,7 @@
 
 namespace Controllers.Settings
 {
-    public static class OccurreceSettings
+    public static class OccurrenceSettings
     {
         public static Occurrence ActualOccurrece { get; private set; }
 

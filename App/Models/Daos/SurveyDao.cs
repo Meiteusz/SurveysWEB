@@ -135,5 +135,40 @@ namespace Models.Daos
 
             return response;
         }
+
+        public ResponseData<IEnumerable<dynamic>> GetByFilters(int p_status, DateTime p_dateFrom, DateTime p_dateTo, string p_adress, string p_responsible)
+        {
+            ResponseData<IEnumerable<dynamic>> response = new ResponseData<IEnumerable<dynamic>>();
+
+            try
+            {
+                using (var context = new SurveysWebContext())
+                {
+                    var surveysList = (from s in context.Set<Survey>()
+                                       join u in context.Set<User>()
+                                       on s.AnalistId equals u.Id
+                                       select new
+                                       {
+                                           Id = s.Id,
+                                           Status = s.Status,
+                                           OpeningDate = s.OpeningDate,
+                                           Description = s.Description,
+                                           Adress = s.Adress,
+                                           ResponsibleName = u.Name
+                                       }).Where(s => s.Status.Equals(p_status) && s.OpeningDate >= p_dateFrom && s.OpeningDate <= p_dateTo && s.Adress.Contains(p_adress)
+                                        ).Where(u => u.ResponsibleName.Contains(p_responsible)).ToList();
+
+                    response.Success = true;
+                    response.Data = surveysList;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
     }
 }

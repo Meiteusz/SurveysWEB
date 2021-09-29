@@ -25,3 +25,14 @@
     background-color: white;
     border: 1px solid black;
 }
+
+.buttons-default {
+    margin-block: 40%;
+    width: 200px;
+    height: 60px;
+}
+
+.buttons-controls {
+    width: 150px;
+    height: 45px;
+}

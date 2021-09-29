@@ -2,6 +2,7 @@
 using Controllers.Settings;
 using Models;
 using Models.Daos;
+using System;
 using System.Collections.Generic;
 
 namespace Controllers
@@ -42,6 +43,11 @@ namespace Controllers
         public ResponseData<IEnumerable<dynamic>> GetAll()
         {
             return _occurrenceDao.GetAll();
+        }
+
+        public ResponseData<IEnumerable<dynamic>> GetByFilters(byte type, DateTime dateFrom, DateTime dateTo, string description, string surveyResponsible)
+        {
+            return _occurrenceDao.GetByFilters(type, dateFrom, dateTo, description, surveyResponsible);
         }
     }
 }

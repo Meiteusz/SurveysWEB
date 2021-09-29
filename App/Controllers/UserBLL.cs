@@ -3,10 +3,13 @@ using Controllers.Settings;
 using Models;
 using Models.Daos.Interfaces;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Validations;
 
 namespace Controllers
 {
-    public class UserBLL : IUserBLL
+    public class UserBLL : UserValidator, IUserBLL
     {
         private readonly IUserDao _userDao;
 
@@ -34,6 +37,16 @@ namespace Controllers
         public Response Update(User user)
         {
             return _userDao.Update(user);
+        }
+
+        public ResponseData<List<User>> GetAll()
+        {
+            return _userDao.GetAll();
+        }
+
+        public ResponseData<User> GetById(int p_Id)
+        {
+            return _userDao.GetById(p_Id);
         }
 
         public ResponseData<string> OpenContentUserType(byte userType)

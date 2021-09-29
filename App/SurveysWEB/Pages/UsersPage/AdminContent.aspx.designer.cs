@@ -33,6 +33,15 @@ namespace SurveysWEB.Pages
         protected global::System.Web.UI.WebControls.Button btnRegisterUser;
 
         /// <summary>
+        /// btnViewUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnViewUsers;
+
+        /// <summary>
         /// pnlRegisterUser control.
         /// </summary>
         /// <remarks>
@@ -159,12 +168,39 @@ namespace SurveysWEB.Pages
         protected global::System.Web.UI.WebControls.Button btnRegister;
 
         /// <summary>
-        /// btnClose control.
+        /// btnCloseRegisterUserModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.Button btnCloseRegisterUserModal;
+
+        /// <summary>
+        /// pnlViewUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlViewUsers;
+
+        /// <summary>
+        /// dgvUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvUsers;
+
+        /// <summary>
+        /// btnCloseViewUsersModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCloseViewUsersModal;
     }
 }

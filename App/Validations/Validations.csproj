@@ -4,16 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE436AA6-2729-49D5-8763-B788A9661BD8}</ProjectGuid>
+    <ProjectGuid>{DBF24019-AA01-4991-AC8B-D0A394CD5C5E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Controllers</RootNamespace>
-    <AssemblyName>Controllers</AssemblyName>
+    <RootNamespace>Validations</RootNamespace>
+    <AssemblyName>Validations</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,29 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IOccurrenceBLL.cs" />
-    <Compile Include="Interfaces\ISurveyBLL.cs" />
-    <Compile Include="Interfaces\IUserBLL.cs" />
-    <Compile Include="OccurrenceBLL.cs" />
-    <Compile Include="Settings\OccurrenceSettings.cs" />
-    <Compile Include="Settings\SurveySettings.cs" />
-    <Compile Include="Settings\UserSettings.cs" />
-    <Compile Include="SurveyBLL.cs" />
-    <Compile Include="UserBLL.cs" />
+    <Compile Include="UserValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{d598c4e3-fedf-4db4-9fa7-1a75f1382353}</Project>
+      <Project>{D598C4E3-FEDF-4DB4-9FA7-1A75F1382353}</Project>
       <Name>Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Validations\Validations.csproj">
-      <Project>{DBF24019-AA01-4991-AC8B-D0A394CD5C5E}</Project>
-      <Name>Validations</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

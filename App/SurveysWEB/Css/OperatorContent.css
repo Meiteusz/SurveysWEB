@@ -26,6 +26,22 @@
     border: 1px solid black;
 }
 
+.dgvSurveys {
+    margin-left: 53px;
+}
+
 .dgvSurveys :hover {
     cursor: pointer;
+}
+
+
+.buttons-default {
+    margin-block: 30%;
+    width: 200px;
+    height: 60px;
+}
+
+.buttons-controls {
+    width: 150px;
+    height: 45px;
 }

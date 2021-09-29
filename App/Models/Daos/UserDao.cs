@@ -108,9 +108,27 @@ namespace Models.Daos
             return response;
         }
 
-        public ResponseData<IEnumerable<dynamic>> GetAll(int p_Id)
+        public ResponseData<List<User>> GetAll()
         {
-            throw new NotImplementedException();
+            ResponseData<List<User>> response = new ResponseData<List<User>>();
+
+            try
+            {
+                using (var context = new SurveysWebContext())
+                {
+                    var usersList = context.Users.ToList();
+
+                    response.Success = true;
+                    response.Data = usersList;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
     }
 }

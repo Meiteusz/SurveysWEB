@@ -20,6 +20,7 @@ namespace SurveysWEB.Pages
             if (!IsPostBack)
             {
                 lblAdminLogged.Text += UserSettings.UserLogged.Login;
+                Helper.ShowData(dgvUsers, _userBLL.GetAll().Data);
             }
         }
 

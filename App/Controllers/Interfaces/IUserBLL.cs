@@ -1,4 +1,5 @@
 ﻿using Models;
+using System.Collections.Generic;
 
 namespace Controllers.Interfaces
 {
@@ -8,6 +9,8 @@ namespace Controllers.Interfaces
         ResponseData<User> Login(User user);
         Response Insert(User user);
         Response Update(User user);
+        ResponseData<List<User>> GetAll();
+        ResponseData<User> GetById(int p_Id);
         ResponseData<string> OpenContentUserType(byte userType);
     }
 }
